@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "description": "A portfolio site to showcase works done",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Barry Loong <loongyh@users.noreply.github.com>",
   "bugs": {
     "url": "https://github.com/loongyh/portfolio/issues"

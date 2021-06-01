@@ -8,6 +8,7 @@ module.exports = {
     description: `A portfolio site to showcase works done`,
     siteUrl: `https://barryl.netlify.app`,
     social: {
+      github: `loongyh`,
       linkedin: `barry-loong`,
     },
   },

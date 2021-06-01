@@ -16,8 +16,8 @@ collections:
     path: '{{title}}/index'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
       - { label: 'Thumbnail', name: thumbnail, widget: image }
       - { label: 'Start Date', name: 'start', widget: 'datetime' }
-      - { label: 'End Date', name: 'end', widget: 'datetime' }
+      - { label: 'End Date', name: 'end', widget: 'datetime', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }

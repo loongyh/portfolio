@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Card, Col, Container, Row } from "react-bootstrap"
 
@@ -42,23 +42,25 @@ export default function IndexPage({ location }) {
     <>
       <Container className="banner" />
       <Layout location={location}>
-        <Seo title={data.site.siteMetadata.title} keywords={[`gatsby`, `react`, `bootstrap`]} />
+        <Seo title={data.site.siteMetadata.title} keywords={[`portfolio`, `projects`, `works`]} />
         <Container>
-          <Row xs={1} sm={2} md={3} lg={4} xl={6}>
-            {data.allMarkdownRemark.nodes.map(project => 
-              <Col key={project.id}>
-                <Card bg="dark">
-                  <GatsbyImage
-                    image={getImage(project.frontmatter.thumbnail)}
-                    alt={project.frontmatter.title}
-                  />
-                  <Card.Body>
-                    <Card.Title>{project.frontmatter.title}</Card.Title>
-                    <Card.Text>{project.frontmatter.description}</Card.Text>
-                  </Card.Body>
-                </Card>
+          <Row className="gy-4" xs={1} sm={2} md={3} lg={4} xl={6}>
+            {data.allMarkdownRemark.nodes.map(project => (
+              <Col key={project.id} >
+                <Link className="link-no-style" to={project.fields.slug}>
+                  <Card className="shadow" bg="secondary">
+                    <GatsbyImage
+                      image={getImage(project.frontmatter.thumbnail)}
+                      alt={project.frontmatter.title}
+                    />
+                    <Card.Body>
+                      <Card.Title>{project.frontmatter.title}</Card.Title>
+                      <Card.Text>{project.frontmatter.description}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
               </Col>
-            )}
+            ))}
           </Row>
         </Container>
       </Layout>

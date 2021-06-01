@@ -1,6 +1,6 @@
 body {
   background-color: $color-bg;
-  color: white;
+  color: $color-text;
 }
 
 div.main {
@@ -12,8 +12,24 @@ div.full-height {
   min-height: 100vh;
 }
 
+a {
+  color: $color-text;
+}
+
+a:hover {
+  color: scale-color($color-text, $lightness: -20%);
+}
+
 a.link-no-style {
+  color: $color-text;
   text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.link-no-style:hover {
+    color: scale-color($color-text, $lightness: -20%);
+    text-decoration: none;
+  }
 }
 
 .banner {
@@ -37,7 +53,7 @@ a.link-no-style {
     height: 60px;
     clear: both;
     background-color: $color-primary;
-    color: white;
+    color: $color-text;
     justify-content: center;
     width: 100%;
 
@@ -46,4 +62,8 @@ a.link-no-style {
       text-align: center;
     }
   }
+}
+
+#___gatsby {
+  overflow-x: hidden;
 }

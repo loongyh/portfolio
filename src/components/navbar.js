@@ -28,7 +28,7 @@ export default function NavbarComponent({ location }) {
   )
   return (
   <>
-    <Navbar variant="dark" expand="lg" id="site-navbar">
+    <Navbar className="px-2 rounded-bottom shadow" variant="dark" expand="sm" id="site-navbar">
     <Link to="/" className="link-no-style">
       <Navbar.Brand>
         {site.siteMetadata.title}
