@@ -1,0 +1,49 @@
+body {
+  background-color: $color-bg;
+  color: white;
+}
+
+div.main {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+div.full-height {
+  min-height: 100vh;
+}
+
+a.link-no-style {
+  text-decoration: none;
+}
+
+.banner {
+  height: 20vh;
+  background-image: url("../../src/images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 40%;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  footer {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    margin-top: -60px;
+    height: 60px;
+    clear: both;
+    background-color: $color-primary;
+    color: white;
+    justify-content: center;
+    width: 100%;
+
+    span {
+      align-self: center;
+      text-align: center;
+    }
+  }
+}

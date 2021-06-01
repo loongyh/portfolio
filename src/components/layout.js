@@ -1,36 +1,52 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql, useStaticQuery } from "gatsby"
+import { Container, Row, Col } from "react-bootstrap"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+import Navbar from "./navbar"
 
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
-
-  return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
-    </div>
-  )
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default function Layout({ children, location }) {
+  const { name } = useStaticQuery(
+    graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            author {
+              name
+            }
+          }
+        }
+      }
+    `
+  ).site.siteMetadata.author
+
+  return (
+    <>
+      <Container className="px-0 main">
+        <Navbar location={location} />
+        <Row noGutters>
+          <Col>
+            <Container className="mt-5">
+              <main>{children}</main>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
+      <Container className="px-0">
+        <Row noGutters>
+          <Col className="footer-col">
+            <footer>
+              <span>
+                © {new Date().getFullYear()} {name}
+              </span>
+            </footer>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  )
+}

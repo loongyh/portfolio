@@ -4,15 +4,15 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  // Define a template for project
+  const project = path.resolve(`./src/templates/project.js`)
 
-  // Get all markdown blog posts sorted by date
+  // Get all markdown projects sorted by start date
   const result = await graphql(
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
+          sort: { fields: [frontmatter___start], order: ASC }
           limit: 1000
         ) {
           nodes {
@@ -28,26 +28,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
+      `There was an error loading your projects`,
       result.errors
     )
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const projects = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+  // Create projects pages
+  // But only if there's at least one markdown file found at "content/projects" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+  if (projects.length > 0) {
+    projects.forEach((post, index) => {
+      const previousPostId = index === 0 ? null : projects[index - 1].id
+      const nextPostId = index === projects.length - 1 ? null : projects[index + 1].id
 
       createPage({
         path: post.fields.slug,
-        component: blogPost,
+        component: project,
         context: {
           id: post.id,
           previousPostId,
@@ -80,7 +80,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   // Also explicitly define the Markdown frontmatter
   // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
+  // projects are stored inside "content/projects" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author
@@ -94,7 +94,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
+      linkedin: String
     }
 
     type MarkdownRemark implements Node {
@@ -105,7 +105,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
-      date: Date @dateformat
+      start: Date @dateformat
+      end: Date @dateformat
     }
 
     type Fields {
