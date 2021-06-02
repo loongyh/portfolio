@@ -13,6 +13,7 @@ export default function ProjectTemplate({ data, location }) {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.thumbnail.childImageSharp.gatsbyImageData}
       />
       <article
         className="project"
@@ -74,6 +75,17 @@ export const pageQuery = graphql`
         start(formatString: "MMMM YYYY")
         end(formatString: "MMMM YYYY")
         description
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              layout: FIXED
+              width: 1200
+              height: 630
+              backgroundColor: "white"
+              transformOptions: {fit: CONTAIN}
+            )
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

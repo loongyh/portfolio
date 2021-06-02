@@ -9,8 +9,28 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
-export default function Seo({ description, lang, meta, title }) {
+import banner from "../images/banner.jpg"
+
+Seo.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
+Seo.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }),
+}
+
+export default function Seo({ description, lang, meta, image: metaImage, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +47,11 @@ export default function Seo({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const image = {
+    src: getSrc(metaImage) || banner,
+    width: metaImage?.width || 1200,
+    height: metaImage?.height || 630,
+  }
 
   return (
     <Helmet
@@ -54,7 +79,15 @@ export default function Seo({ description, lang, meta, title }) {
         },
         {
           name: `og:image`,
-          content: null,
+          content: `${site.siteMetadata.siteUrl}${image.src}`,
+        },
+        {
+          property: "og:image:width",
+          content: image.width,
+        },
+        {
+          property: "og:image:height",
+          content: image.height,
         },
         {
           name: `og:url`,
@@ -63,17 +96,4 @@ export default function Seo({ description, lang, meta, title }) {
       ].concat(meta)}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
