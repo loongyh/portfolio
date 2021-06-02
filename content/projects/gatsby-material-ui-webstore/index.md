@@ -5,7 +5,7 @@ thumbnail: icon-512x512.png
 start: 2020-01-01T18:42:38.976Z
 end: 2020-04-01T18:42:38.989Z
 ---
-## Preface
+## Intro
 
 There are many options nowadays to set-up a webstore. Small business owners usually contract a freelancer or web development firm to do it for them. [Shopify](https://www.shopify.com/) and [WooCommerce](https://woocommerce.com/) are two of the most popular platforms deployed. Such projects are usually a one-off thing and once the site is up, unless there is a maintenance contract, the system is handed over to the business owner to manage.
 
@@ -29,8 +29,12 @@ I have wrote the website frontend with [GatsbyJS](https://www.gatsbyjs.com/) + [
 
 Changes to the product listings can be made directly on the Google Sheets database, and after clicking on the deploy button it will then trigger the site to rebuild.
 
-During every build process, all the products data and images are pulled from Google Sheets and Drive. All site pages are then pre-compiled and ready to be served directly to browsers. The entire shopping process from browsing and adding items to cart; calculation of order totals with discounts and promos; filling up the ordering form - is all done using JavaScript in the browser in a snappy app-like experience. On submission, the entire order is then sent to a serverless lambda function, with the order details being sent out via email on successful verification.
+During every build process, all the products data and images are pulled from Google Sheets and Drive. All site pages are then pre-compiled and ready to be served directly to browsers. This eliminates the need for an always-running backend and database and results in **blazing-fast** page load times. Running costs are also **kept to a minimum** as most static site hosters have free tiers.
 
-This eliminates the need for an always-running backend and database and results in **blazing-fast** page load times. Running costs are also **kept to a minimum** as most static site hosters have free tiers.
+
+
+//The entire shopping process from browsing and adding items to cart; calculation of order totals with discounts and promos; filling up the ordering form. On submission, the entire order is then sent to a serverless lambda function, with the order details being sent out via email on successful verification.
 
 ![](3.png)
+
+The entire shopping process from first visit, checkout, to confirmation of order and payment is all done using JavaScript in the browser in a snappy app-like experience.
