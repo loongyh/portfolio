@@ -23,7 +23,7 @@ Upon learning about the benefits of Static Site Generation (SSG) and the [JAMSta
 
 ![Products page](1.png "Products Page")
 
-I have wrote the website frontend with [GatsbyJS](https://www.gatsbyjs.com/) + [Material-UI](https://material-ui.com/), and the order processing backend with [Node.js](https://nodejs.org/en/) [serverless lambda functions](https://www.netlify.com/products/functions/). Google Apps such as Drive, Docs, Sheets and Gmail are used to manage the products listings and orders, as such there are **no unfamiliar UIs** for the client to learn.
+The website frontend is written with [GatsbyJS](https://www.gatsbyjs.com/) + [Material-UI](https://material-ui.com/), and the order processing backend with [Node.js](https://nodejs.org/en/) [serverless lambda functions](https://www.netlify.com/products/functions/). Google Apps such as Drive, Docs, Sheets and Gmail are used to manage the products listings and orders, as such there are **no unfamiliar UIs** for the client to learn.
 
 ![Products database](2.png "Products Database")
 
@@ -43,4 +43,12 @@ The delivery fee is calculated as the customer enters in the postal code. A prom
 
 ![Order Page](4.png "Order Page")
 
-On submission, the entire order is then sent to a serverless lambda function, with the order details being sent out via email on successful verification.
+On submission, the entire order is then sent to a serverless lambda function, with the order confirmation and details being returned on successful verification. Payment instructions are also shown according to the customer's chosen payment method.
+
+![Order Confirmation](5.png "Order Confirmation")
+
+Both the webstore owner and customer receive an email of the order confirmation and details. In the webstore owner's Gmail, colored labels are automatically applied via the use of Google Apps Scripts to help manage the orders.
+
+![Webstore Owner's Inbox](6.png "Webstore Owner's Inbox")
+
+![Order Email](7.png "Order Email")
