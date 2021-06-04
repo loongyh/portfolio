@@ -52,3 +52,16 @@ Both the webstore owner and customer receive an email of the order confirmation 
 ![Webstore Owner's Inbox](6.png "Webstore Owner's Inbox")
 
 ![Order Email](7.png "Order Email")
+
+## Caveats
+
+This approach is intended for small-volume orders only. If daily orders reaches the hundreds, the number of emails received can quickly get overwhelming. Without a backend, other aspects of retail which require real-time tracking like inventory, stock and order management are not implemented.
+
+## Future Plans
+
+A few ideas on implementing a backend to go with this:
+
+* [NextJS](https://nextjs.org/) + an API database like [FaunaDB](https://fauna.com/) or [Heroku Postgres](https://www.heroku.com/postgres) hosted on Heroku
+* Google Cloud Platform (GCP) also has a complete set of cloud services
+
+Both are excellent cloud providers with free tiers so running costs are scaled accordingly. A store management UI (which can also be written with GatsbyJS) and authentication to interface with this backend has to be implemented too. For now, clients looking for a full webstore should look at a Shopify deployment.
