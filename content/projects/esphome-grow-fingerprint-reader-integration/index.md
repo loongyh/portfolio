@@ -46,4 +46,4 @@ To interface the lock (usually 12V) with the ESP8266/32 (3.3V), we will need a t
 
 Finally, search for "12V power adapter" and get one ($2) that is the same voltage as the lock, the current has to be the same or higher.
 
-The total bill of materials now adds up to $30, getting 4 sets amounts to $120, a far more affordable solution. In my opinion this is far superior and reliable than the commerical sets, as at the end of it you'll be able to connect and control it over WiFi, with your very own locally-run instance of Home Assistant. Also, all locks and electronics do break eventually and you can easily replace them since they're off-the-shelf commodities!
+The total bill of materials now adds up to $30, getting 4 sets amounts to $120, a far more affordable solution. If you shop on Taobao, prices there can be much cheaper. In my opinion this is far superior and reliable than the commerical sets, as at the end of it you'll be able to connect and control it over WiFi, with your very own locally-run instance of Home Assistant. Also, all locks and electronics do break eventually and you can easily replace them since they're off-the-shelf commodities!
