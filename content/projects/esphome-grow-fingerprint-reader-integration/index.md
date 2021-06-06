@@ -50,7 +50,7 @@ With an open hardware platform, off-the shelves commodity components can be sour
 
 Electronic bolt door locks costs around $12 on average.
 
-Other parts that are required are a MOSFET transistors(<$1), voltage regulators (<$1) power adapters ($2).
+Other parts that are required are a MOSFET transistors(<$1), voltage regulators (<$1) and power adapters ($2).
 
 What's left is to engage an electrical contractor to lay the wiring, and install commodity wall-mounted enclosure boxes at each of the doors to house the reader and the electronics.
 
