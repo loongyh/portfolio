@@ -24,6 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `frontpage-images`,
+        path: `${__dirname}/content/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -36,6 +43,13 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
+            },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "noopener noreferrer"
             },
           },
           {

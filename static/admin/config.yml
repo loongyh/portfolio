@@ -3,21 +3,21 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: static/img
-public_folder: /img
+media_folder: "content/images"
+public_folder: "/images"
 
 collections:
-  - name: 'projects'
-    label: 'Projects'
-    folder: 'content/projects'
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
     create: true
-    slug: 'index'
-    media_folder: ''
-    path: '{{title}}/index'
+    slug: "index"
+    media_folder: ""
+    path: "{{title}}/index"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Thumbnail', name: thumbnail, widget: image }
-      - { label: 'Start Date', name: 'start', widget: 'datetime', date_format: 'MMMM YYYY', time_format: false }
-      - { label: 'End Date', name: 'end', widget: 'datetime', date_format: 'MMMM YYYY', time_format: false, required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Thumbnail", name: thumbnail, widget: image }
+      - { label: "Start Date", name: "start", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
+      - { label: "End Date", name: "end", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

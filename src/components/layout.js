@@ -13,7 +13,7 @@ Layout.propTypes = {
 export default function Layout({ children, location }) {
   const { author, social } = useStaticQuery(
     graphql`
-      query SiteTitleQuery {
+      query {
         site {
           siteMetadata {
             author {

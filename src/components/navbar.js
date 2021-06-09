@@ -1,23 +1,12 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-import { Navbar, Nav } from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap"
 
 export default function NavbarComponent({ location }) {
-  const { allMarkdownRemark, site } = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
-          nodes {
-            frontmatter {
-            title
-            }
-            fields {
-              slug
-            }
-            id
-          }
-        }
         site {
           siteMetadata {
             title
@@ -34,16 +23,49 @@ export default function NavbarComponent({ location }) {
         {site.siteMetadata.title}
       </Navbar.Brand>
     </Link>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="mr-auto" activeKey={location.pathname}>
-      {allMarkdownRemark.nodes.map(node => (
-        <Link key={node.id} to={node.fields.slug} className="link-no-style">
-          <Nav.Link as="span" eventKey={node.fields.slug}>
-            {node.frontmatter.title}
-          </Nav.Link>
-        </Link>
-      ))}
+        <Nav.Link
+          className="link-no-style"
+          as={Link}
+          to="/"
+          eventKey="/"
+        >
+          About
+        </Nav.Link>
+        <Nav.Link 
+          className="link-no-style"
+          as={Link}
+          to="/projects/"
+          eventKey="/projects/"
+        >
+          Projects
+        </Nav.Link>        
+        <Nav.Link
+          className="link-no-style"
+          as={Link}
+          to="/skills/"
+          eventKey="/skills/"
+        >
+          Skills
+        </Nav.Link>
+        <Nav.Link
+          className="link-no-style"
+          as={Link}
+          to="/experience/"
+          eventKey="/experience/"
+        >
+          Experience
+        </Nav.Link>
+        <Nav.Link
+          className="link-no-style"
+          as={Link}
+          to="/contact/"
+          eventKey="/contact/"
+        >
+          Contact
+        </Nav.Link>
       </Nav>
     </Navbar.Collapse>
     </Navbar>

@@ -1,64 +1,67 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Card, Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 export default function IndexPage({ location }) {
-  const data = useStaticQuery(
+  const images = useStaticQuery(
     graphql`
-      query MyQuery {
-        allMarkdownRemark {
+      query {
+        allFile(
+          filter: {sourceInstanceName: {eq: "frontpage-images"}}
+          sort: {fields: name}
+        ) {
           nodes {
-            frontmatter {
-              title
-              description
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 1200
-                  )
-                }
-              }
-            }
-            fields {
-              slug
+            name
+            childImageSharp {
+              gatsbyImageData(
+                aspectRatio: 1
+                layout: FULL_WIDTH
+                backgroundColor: "#20232A"
+                transformOptions: {fit: CONTAIN}
+              )
             }
             id
           }
         }
-        site {
-          siteMetadata {
-            title
-          }
-        }
       }
     `
-  )
+  ).allFile
 
   return (
     <>
       <Container className="banner" />
       <Layout location={location}>
-        <Seo title={data.site.siteMetadata.title} keywords={[`portfolio`, `projects`, `works`]} />
+        <Seo title="About Me" keywords={[`portfolio`, `projects`, `works`]} />
+        <section>
+          <h1 class="text-center">Hi, I'm Barry 👋</h1>
+          <h2 class="text-center" style={{fontSize:'1.5rem'}}>Systems Engineer / Integrator</h2>
+          <h2 class="text-center" style={{fontSize:'0.8rem'}}>BSc (Hons) in Computing and Information Systems</h2>
+          <h2 class="text-center" style={{fontSize:'0.8rem'}}>Diploma in Electrical Engineering</h2>
+        </section>
+        <hr />
+        <section>
+          <p>Since university graduation, I continued my final year project to automate everything in the home.</p>
+          <p>
+            My dream is to make home automation accessible for everyone.<br />
+            In the process, I have managed to source affordable, high quality and practical commercial hardware from China.<br />
+            I have integrated these hardware into the opensource <a href="https://esphome.io" target="_blank" rel="noopener noreferrer">ESPHome</a> and by extension <a href="https://www.home-assistant.io" target="_blank" rel="noopener noreferrer">Home Assistant</a> platforms.<br />
+            My efforts are now part of these opensource projects.
+          </p>
+          <p>I'm currently looking for work in DevOps, SRE and cloud native roles.</p>
+        </section>
+        <hr />
         <Container>
           <Row className="gy-4" xs={1} sm={2} md={3} lg={4} xl={6}>
-            {data.allMarkdownRemark.nodes.map(project => (
-              <Col key={project.id} >
-                <Link className="link-no-style" to={project.fields.slug}>
-                  <Card className="shadow" bg="secondary">
-                    <GatsbyImage
-                      image={getImage(project.frontmatter.thumbnail)}
-                      alt={project.frontmatter.title}
-                    />
-                    <Card.Body>
-                      <Card.Title>{project.frontmatter.title}</Card.Title>
-                      <Card.Text>{project.frontmatter.description}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Link>
+            {images.nodes.map(image => (
+              <Col key={image.id}>
+                <GatsbyImage
+                  image={getImage(image.childImageSharp.gatsbyImageData)}
+                  alt={image.name}
+                />
               </Col>
             ))}
           </Row>
