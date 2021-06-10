@@ -54,7 +54,7 @@ collections:
       - label: "Jobs Done"
         name: "jobs"
         widget: "list"
-        label_singular: "Add Job"
+        label_singular: "Job"
         field: { label: "Job", name: "job", widget: "string" }
       - { label: "Start Date", name: "workStart", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
       - { label: "End Date", name: "workEnd", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
