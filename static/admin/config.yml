@@ -29,11 +29,12 @@ collections:
     media_folder: ""
     path: "{{title}}/index"
     fields:
-      - { label: "Type", name: "type", widget: "select",
-          options:
-            - { label: "Industry Knowledge", value: "industry-knowledge" }
-            - { label: "Tool", value: "tool" }
-        }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Industry Knowledge", value: "industry-knowledge" }
+          - { label: "Tool", value: "tool" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", hint: "64x64px" }
       - { label: "URL", name: "url", widget: "string", required: false }
