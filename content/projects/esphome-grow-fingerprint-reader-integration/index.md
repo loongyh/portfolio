@@ -2,8 +2,8 @@
 title: ESPHome - Grow Fingerprint Reader Integration
 description: New component to integrate Grow fingerprint readers into the ESPHome project.
 thumbnail: r503.jpg
-start: 2020-10-04T14:59:57.744Z
-end: 2021-04-04T14:59:57.752Z
+projectStart: 2020-10-04T14:59:57.744Z
+projectEnd: 2021-04-04T14:59:57.752Z
 ---
 ## Intro
 

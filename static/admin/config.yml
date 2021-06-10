@@ -17,7 +17,38 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Thumbnail", name: thumbnail, widget: image }
-      - { label: "Start Date", name: "start", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
-      - { label: "End Date", name: "end", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", hint: "1:1" }
+      - { label: "Start Date", name: "projectStart", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
+      - { label: "End Date", name: "projectEnd", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "skills"
+    label: "Skills"
+    folder: "content/skills"
+    create: true
+    slug: "index"
+    media_folder: ""
+    path: "{{title}}/index"
+    fields:
+      - { label: "Type", name: "type", widget: "select",
+          options:
+            - { label: "Industry Knowledge", value: "industry-knowledge" }
+            - { label: "Tool", value: "tool" }
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", hint: "64x64px" }
+      - { label: "URL", name: "url", widget: "string", required: false }
+  - name: "work-history"
+    label: "Work History"
+    folder: "content/work-history"
+    create: true
+    slug: "index"
+    media_folder: ""
+    path: "{{title}}/index"
+    fields:
+      - { label: "Organisation", name: "organisation", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Jobs Done", name: "jobs", widget: "list", label_singular: "Add Job" }
+      - { label: "Start Date", name: "workStart", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
+      - { label: "End Date", name: "workEnd", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
+      - { label: "URL", name: "url", widget: "string", required: false }

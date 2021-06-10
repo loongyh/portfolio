@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { Nav, Navbar } from "react-bootstrap"
 
 export default function NavbarComponent({ location }) {
-  const { site } = useStaticQuery(
+  const { title } = useStaticQuery(
     graphql`
       query {
         site {
@@ -14,13 +14,14 @@ export default function NavbarComponent({ location }) {
         }
       }
     `
-  )
+  ).site.siteMetadata
+  
   return (
   <>
     <Navbar className="px-2 rounded-bottom shadow" variant="dark" expand="sm" id="site-navbar">
     <Link to="/" className="link-no-style">
       <Navbar.Brand>
-        {site.siteMetadata.title}
+        {title}
       </Navbar.Brand>
     </Link>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -53,10 +54,10 @@ export default function NavbarComponent({ location }) {
         <Nav.Link
           className="link-no-style"
           as={Link}
-          to="/experience/"
-          eventKey="/experience/"
+          to="/work-history/"
+          eventKey="/work-history/"
         >
-          Experience
+          Work History
         </Nav.Link>
         <Nav.Link
           className="link-no-style"

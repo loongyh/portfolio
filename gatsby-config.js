@@ -17,6 +17,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `frontpage-images`,
+        path: `${__dirname}/content/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `projects`,
         path: `${__dirname}/content/projects`,
       },
@@ -24,8 +31,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `frontpage-images`,
-        path: `${__dirname}/content/images`,
+        name: `skills`,
+        path: `${__dirname}/content/skills`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `work-history`,
+        path: `${__dirname}/content/work-history`,
       },
     },
     {
@@ -95,8 +109,8 @@ module.exports = {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
-                  start: node.frontmatter.start,
-                  end: node.frontmatter.end,
+                  start: node.frontmatter.projectStart,
+                  end: node.frontmatter.projectEnd,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
@@ -106,7 +120,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___start] }
+                  sort: { order: DESC, fields: [frontmatter___projectStart] }
                 ) {
                   nodes {
                     excerpt
@@ -116,8 +130,8 @@ module.exports = {
                     }
                     frontmatter {
                       title
-                      start
-                      end
+                      projectStart
+                      projectEnd
                     }
                   }
                 }

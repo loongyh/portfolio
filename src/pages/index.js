@@ -37,7 +37,7 @@ export default function IndexPage({ location }) {
       <Layout location={location}>
         <Seo title="About Me" keywords={[`portfolio`, `projects`, `works`]} />
         <section>
-          <h1 class="text-center">Hi, I'm Barry 👋</h1>
+          <h1 class="text-center">Hi, I'm Barry</h1>
           <h2 class="text-center" style={{fontSize:'1.5rem'}}>Systems Engineer / Integrator</h2>
           <h2 class="text-center" style={{fontSize:'0.8rem'}}>BSc (Hons) in Computing and Information Systems</h2>
           <h2 class="text-center" style={{fontSize:'0.8rem'}}>Diploma in Electrical Engineering</h2>
@@ -48,7 +48,7 @@ export default function IndexPage({ location }) {
           <p>
             My dream is to make home automation accessible for everyone.<br />
             In the process, I have managed to source affordable, high quality and practical commercial hardware from China.<br />
-            I have integrated these hardware into the opensource <a href="https://esphome.io" target="_blank" rel="noopener noreferrer">ESPHome</a> and by extension <a href="https://www.home-assistant.io" target="_blank" rel="noopener noreferrer">Home Assistant</a> platforms.<br />
+            I have integrated these hardware into the <a href="https://esphome.io" target="_blank" rel="noopener noreferrer">ESPHome</a> and by extension <a href="https://www.home-assistant.io" target="_blank" rel="noopener noreferrer">Home Assistant</a> platforms.<br />
             My efforts are now part of these opensource projects.
           </p>
           <p>I'm currently looking for work in DevOps, SRE and cloud native roles.</p>

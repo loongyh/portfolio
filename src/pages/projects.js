@@ -7,10 +7,13 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 export default function ProjectsPage({ location }) {
-  const data = useStaticQuery(
+  const projects = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          filter: {frontmatter: {projectStart: {ne: null}}}
+          sort: { fields: frontmatter___projectStart, order: DESC }
+        ) {
           nodes {
             frontmatter {
               title
@@ -32,21 +35,16 @@ export default function ProjectsPage({ location }) {
             id
           }
         }
-        site {
-          siteMetadata {
-            title
-          }
-        }
       }
     `
-  )
+  ).allMarkdownRemark
 
   return (
     <Layout location={location}>
       <Seo title="My Projects" keywords={[`portfolio`, `work done`, `undertaking`]} />
       <Container>
           <Row className="gy-4" xs={1} sm={2} md={3} lg={4} xl={6}>
-            {data.allMarkdownRemark.nodes.map(project => (
+            {projects.nodes.map(project => (
               <Col key={project.id} >
                 <Link className="link-no-style" to={project.fields.slug}>
                   <Card className="shadow" bg="secondary">

@@ -5,10 +5,10 @@ import { Card, Col, Container, Row } from "react-bootstrap"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-export default function ExperiencePage({ location }) {
+export default function WorkHistoryPage({ location }) {
   return (
     <Layout location={location}>
-      <Seo title="My Experience" keywords={[`industry`, `work history`, `jobs`]} />
+      <Seo title="Work History" keywords={[`industry`, `experience`, `jobs`]} />
 
     </Layout>
   )

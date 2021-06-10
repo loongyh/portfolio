@@ -12,8 +12,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___start], order: ASC }
-          limit: 1000
+          filter: {frontmatter: {projectStart: {ne: null}}}
+          sort: { fields: frontmatter___projectStart, order: DESC }
         ) {
           nodes {
             id
@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` && node.frontmatter.projectStart) {
     const value = `/projects${createFilePath({ node, getNode })}`
 
     createNodeField({
@@ -77,10 +77,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   // Explicitly define the siteMetadata {} object
   // This way those will always be defined even if removed from gatsby-config.js
-
-  // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
-  // projects are stored inside "content/projects" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author
@@ -96,22 +92,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Social {
       github: String
       linkedin: String
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-
-    type Frontmatter {
-      title: String
-      description: String
-      start: Date @dateformat
-      end: Date @dateformat
-    }
-
-    type Fields {
-      slug: String
     }
   `)
 }

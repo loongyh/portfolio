@@ -22,7 +22,7 @@ export default function ProjectTemplate({ data, location }) {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.start} - {post.frontmatter.end || 'Current'}</p>
+          <p>{post.frontmatter.projectStart} - {post.frontmatter.projectEnd || 'Current'}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -72,8 +72,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        start(formatString: "MMMM YYYY")
-        end(formatString: "MMMM YYYY")
+        projectStart(formatString: "MMMM YYYY")
+        projectEnd(formatString: "MMMM YYYY")
         description
         thumbnail {
           childImageSharp {
