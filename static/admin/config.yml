@@ -9,6 +9,7 @@ public_folder: "/images"
 collections:
   - name: "projects"
     label: "Projects"
+    label_singular: "Project"
     folder: "content/projects"
     create: true
     slug: "index"
@@ -23,6 +24,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "skills"
     label: "Skills"
+    label_singular: "Skill"
     folder: "content/skills"
     create: true
     slug: "index"
@@ -49,7 +51,11 @@ collections:
       - { label: "Organisation", name: "organisation", widget: "string" }
       - { label: "Position", name: "position", widget: "string" }
       - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Jobs Done", name: "jobs", widget: "list", label_singular: "Add Job" }
+      - label: "Jobs Done"
+        name: "jobs"
+        widget: "list"
+        label_singular: "Add Job"
+        field: { label: "Job", name: "job", widget: "string" }
       - { label: "Start Date", name: "workStart", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
       - { label: "End Date", name: "workEnd", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
       - { label: "URL", name: "url", widget: "string", required: false }
