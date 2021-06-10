@@ -120,7 +120,8 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___projectStart] }
+                  filter: {frontmatter: {projectStart: {ne: null}}}
+                  sort: { fields: frontmatter___projectStart, order: DESC }
                 ) {
                   nodes {
                     excerpt
