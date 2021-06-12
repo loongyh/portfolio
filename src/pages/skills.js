@@ -44,7 +44,7 @@ export default function SkillsPage({ location }) {
           <Row className="gx-0" noGutters>
             <Col className="d-flex align-items-center" xs={2}>
               <GatsbyImage
-                image={getImage(node.frontmatter.thumbnail.childImageSharp.gatsbyImageData)}
+                image={getImage(node.frontmatter.thumbnail)}
                 alt={node.title}
               />
             </Col>
@@ -61,23 +61,19 @@ export default function SkillsPage({ location }) {
   return (
     <Layout location={location}>
       <Seo title="My Skills" keywords={[`expertise`, `proficiency`, `know-how`]} />
-      <section>
-        <h1 className="mb-4">Industry Knowledge</h1>
-        <Container>
-          <Row className="gy-4" xs={1} md={2} lg={3}>
-            {skills.nodes.filter(node => node.frontmatter.type === 'industry-knowledge').map(node => skillCard(node))}
-          </Row>
-        </Container>
-      </section>
+      <h2 className="mb-4">Industry Knowledge</h2>
+      <Container>
+        <Row className="gy-4" xs={1} md={2} lg={3}>
+          {skills.nodes.filter(node => node.frontmatter.type === 'industry-knowledge').map(node => skillCard(node))}
+        </Row>
+      </Container>
       <hr className="mt-4 mb-3" />
-      <section>
-        <h1 className="mb-4">Tools & Technologies</h1>
-        <Container>
-          <Row className="gy-4" xs={1} md={2} lg={3}>
-            {skills.nodes.filter(node => node.frontmatter.type === 'tool').map(node => skillCard(node))}
-          </Row>
-        </Container>
-      </section>
+      <h2 className="mb-4">Tools & Technologies</h2>
+      <Container>
+        <Row className="gy-4" xs={1} md={2} lg={3}>
+          {skills.nodes.filter(node => node.frontmatter.type === 'tool').map(node => skillCard(node))}
+        </Row>
+      </Container>
     </Layout>
   )
 }

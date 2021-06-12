@@ -13,7 +13,7 @@ export default function ProjectTemplate({ data, location }) {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={post.frontmatter.thumbnail.childImageSharp.gatsbyImageData}
+        image={post.frontmatter.thumbnail}
       />
       <article
         className="project"

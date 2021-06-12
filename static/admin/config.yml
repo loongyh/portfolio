@@ -46,11 +46,11 @@ collections:
     create: true
     slug: "index"
     media_folder: ""
-    path: "{{title}}/index"
+    path: "{{organisation}}/index"
     fields:
       - { label: "Organisation", name: "organisation", widget: "string" }
       - { label: "Position", name: "position", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
       - label: "Jobs Done"
         name: "jobs"
         widget: "list"
