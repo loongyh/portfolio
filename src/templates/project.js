@@ -22,7 +22,7 @@ export default function ProjectTemplate({ data, location }) {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.projectStart} - {post.frontmatter.projectEnd || 'Current'}</p>
+          <p>{post.frontmatter.projectStart} - {post.frontmatter.projectEnd === 'Invalid date' ? 'Current' : post.frontmatter.projectEnd}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}

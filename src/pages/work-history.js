@@ -57,7 +57,7 @@ export default function WorkHistoryPage({ location }) {
                 </a>
               </Col>
               <Col className="px-0" sm={4} md={6} lg={8}>
-                <h6>{node.frontmatter.workStart} - {node.frontmatter.workEnd || 'Current'}</h6>
+                <h6>{node.frontmatter.workStart} - {node.frontmatter.workEnd === 'Invalid date' ? 'Current' : node.frontmatter.workEnd}</h6>
               </Col>
             </Row>
           </Container>
