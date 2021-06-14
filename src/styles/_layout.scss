@@ -64,6 +64,19 @@ a.link-no-style {
   }
 }
 
+.form-control {
+  background-color: $color-secondary;
+  border: 1px solid $color-primary;
+  color: $color-text;
+}
+
+.form-control:focus {
+  background-color: $color-secondary;
+  border: 1px solid #6c757d;
+  box-shadow: 0 0 0 0.25rem #475a7540;
+  color: $color-text;
+}
+
 #___gatsby {
   overflow-x: hidden;
 }
