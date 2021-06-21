@@ -48,7 +48,7 @@ export default function IndexPage({ location }) {
           I have integrated these hardware into the <a href="https://esphome.io" target="_blank" rel="noopener noreferrer">ESPHome</a> and by extension <a href="https://www.home-assistant.io" target="_blank" rel="noopener noreferrer">Home Assistant</a> platforms.<br />
           My efforts are now part of these opensource projects.
         </p>
-        <p>I'm currently looking for work in DevOps, SRE and cloud native roles.</p>
+        <p>I'm currently looking for work in Software Engineering, DevOps, SRE and cloud native roles.</p>
         <hr />
         <Container>
           <Row className="gy-4" xs={1} sm={2} md={3} lg={4} xl={6}>
