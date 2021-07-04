@@ -13,6 +13,27 @@ In the course of my university's final year project, I have written an integrati
 
 Aside from displaying the current weather forecasts and meteorological readings, another use case can be an automation which triggers connected smart windows to automatically close when the \`rainfall\` sensor increases due to rain.
 
+To enable the integration, the following YAML configuration is entered into Home Assistant's `configuration.yaml`:
+
+```yaml
+# Example configuration.yaml entry
+sensor:
+  - platform: nea
+    monitored_conditions:
+      - 2-hour-weather-forecast
+      - air-temperature
+      - pm25
+      - psi
+      - rainfall
+      - relative-humidity
+      - uv-index
+      - wind-direction
+      - wind-speed
+      
+weather:
+  - platform: nea
+```
+
 This was how it looked like back in April 2018:
 
 ![Old UI](old_ui.png "Old UI")
@@ -34,22 +55,3 @@ Forecasts are displayed in a 5-day period, complete with high and low temperatur
 ![Weather forecast and current readings](new_ui_3.png "Weather forecast and current readings")
 
 ![Weather card settings](new_ui_4.png "Weather card settings")
-
-```yaml
-# Example configuration.yaml entry
-sensor:
-  - platform: nea
-    monitored_conditions:
-      - 2-hour-weather-forecast
-      - air-temperature
-      - pm25
-      - psi
-      - rainfall
-      - relative-humidity
-      - uv-index
-      - wind-direction
-      - wind-speed
-      
-weather:
-  - platform: nea
-```
