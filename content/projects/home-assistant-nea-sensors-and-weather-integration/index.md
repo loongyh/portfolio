@@ -11,7 +11,7 @@ Home Assistant is an opensource home automation platform written with Python.
 
 In the course of my university's final year project, I have written an integration to use climate and forecast data provided by the [National Environment Agency](https://www.nea.gov.sg). It retrieves and processes the data from Data.gov.sg's [Environment API](https://data.gov.sg/dataset?groups=environment&res_format=API) and integrates them into Home Assistant.
 
-Aside from displaying the current weather forecasts and meteorological readings, another use case can be an automation which triggers connected smart windows to automatically close when the \`rainfall\` sensor increases due to rain.
+Aside from displaying the current weather forecasts and meteorological readings, another use case can be an automation which triggers connected smart windows to automatically close when the `rainfall` sensor increases due to rain.
 
 To enable the integration, the following YAML configuration is entered into Home Assistant's `configuration.yaml`:
 
