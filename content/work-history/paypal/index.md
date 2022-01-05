@@ -1,6 +1,6 @@
 ---
 organisation: PayPal
-position: Software Engineer I
+position: Software Engineer
 thumbnail: paypal.png
 jobs:
   - Wrote Node.js scripts to process and clean up platform configurations
