@@ -41,11 +41,11 @@ export default function SkillsPage({ location }) {
     <Col key={node.id}>
       <a className="link-no-style" href={node.frontmatter.url} target="_blank" rel="noopener noreferrer">
         <Card className="shadow" bg="secondary">
-          <Row className="gx-0" noGutters>
+          <Row className="gx-0">
             <Col className="d-flex align-items-center" xs={2}>
               <GatsbyImage
                 image={getImage(node.frontmatter.thumbnail)}
-                alt={node.title}
+                alt={node.frontmatter.title}
               />
             </Col>
             <Col className="d-flex align-items-center" xs={10}>

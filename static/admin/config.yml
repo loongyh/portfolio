@@ -7,6 +7,34 @@ media_folder: "content/images"
 public_folder: "/images"
 
 collections:
+  - name: "about"
+    label: "About"
+    media_folder: ""
+    editor:
+      preview: false
+    files:
+      - name: "aboutPage"
+        label: "About Page"
+        file: "content/about/about.md"
+        fields:
+          - { label: "Banner", name: "banner", widget: "image", allow_multiple: false }
+          - { label: "Name", name: "name", widget: "string", hint: "Hi, I'm <name>" }
+          - { label: "Occupation", name: "occupation", widget: "string" }
+          - { label: "Education 1", name: "education1", widget: "string" }
+          - { label: "Education 2", name: "education2", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "siteSettings"
+        label: "Site Settings"
+        file: "content/about/settings.json"
+        format: "json"
+        fields:
+          - { label: "Avatar", name: "avatar", widget: "image", allow_multiple: false }
+          - { label: "Full Name", name: "fullName", widget: "string" }
+          - { label: "Short Name", name: "shortName", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "GitHub", name: "github", widget: "string" }
+          - { label: "LinkedIn", name: "linkedin", widget: "string" }
   - name: "projects"
     label: "Projects"
     label_singular: "Project"
@@ -18,7 +46,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", hint: "1:1" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", allow_multiple: false, hint: "1:1" }
       - { label: "Start Date", name: "projectStart", widget: "datetime", date_format: "MMMM YYYY", time_format: false }
       - { label: "End Date", name: "projectEnd", widget: "datetime", date_format: "MMMM YYYY", time_format: false, required: false }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -26,6 +54,8 @@ collections:
     label: "Skills"
     label_singular: "Skill"
     folder: "content/skills"
+    editor:
+      preview: false
     create: true
     slug: "index"
     media_folder: ""
@@ -38,11 +68,13 @@ collections:
           - { label: "Industry Knowledge", value: "industry-knowledge" }
           - { label: "Tool", value: "tool" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", hint: "64x64px" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", allow_multiple: false, hint: "64x64px" }
       - { label: "URL", name: "url", widget: "string", required: false }
   - name: "work-history"
     label: "Work History"
     folder: "content/work-history"
+    editor:
+      preview: false
     create: true
     slug: "index"
     media_folder: ""
@@ -50,7 +82,7 @@ collections:
     fields:
       - { label: "Organisation", name: "organisation", widget: "string" }
       - { label: "Position", name: "position", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", allow_multiple: false, required: false }
       - label: "Jobs Done"
         name: "jobs"
         widget: "list"

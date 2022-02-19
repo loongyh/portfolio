@@ -79,8 +79,7 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(
               layout: FIXED
-              width: 1200
-              height: 630
+              aspectRatio: 1.905
               backgroundColor: "white"
               transformOptions: {fit: CONTAIN}
             )

@@ -38,7 +38,7 @@ export default function Layout({ children, location }) {
         </Container>
       </Container>
       <Container className="px-0">
-        <Row noGutters>
+        <Row>
           <Col className="footer-col">
             <footer className="px-3 rounded-top justify-content-between">
               <span>

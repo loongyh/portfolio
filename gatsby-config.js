@@ -1,23 +1,37 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+const path = require("path")
+const settings = require("./content/about/settings.json")
+
 module.exports = {
   siteMetadata: {
-    title: `Barry Loong`,
+    title: settings.fullName,
     author: {
-      name: `Barry Loong`,
-      summary: `With engineering driven by passion, I strive to complement reliable and industry-proven methods with the latest in tech.`,
+      name: settings.fullName,
+      summary: settings.summary,
     },
-    description: `A portfolio site to showcase works done`,
-    siteUrl: `https://barryl.netlify.app`,
+    description: settings.description,
+    siteUrl: process.env.URL,
     social: {
-      github: `loongyh`,
-      linkedin: `barry-loong`,
+      github: settings.github,
+      linkedin: settings.linkedin,
     },
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `frontpage-images`,
+        name: `about`,
+        path: `${__dirname}/content/about`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
         path: `${__dirname}/content/images`,
       },
     },
@@ -40,13 +54,6 @@ module.exports = {
       options: {
         name: `work-history`,
         path: `${__dirname}/content/work-history`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -139,6 +146,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: `${settings.shortName}'s RSS Feed`,
           },
         ],
       },
@@ -146,17 +154,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Barry Loong`,
-        short_name: `Barry`,
+        name: settings.fullName,
+        short_name: settings.shortName,
         start_url: `/`,
         background_color: `#20232a`,
         theme_color: `#20232a`,
         display: `minimal-ui`,
-        icon: `src/images/profile-pic.jpg`, // This path is relative to the root of the site.
+        icon: `content/about/${settings.avatar}`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        resolveModules: [path.join(__dirname, "content")],
+      },
+    },
   ],
 }

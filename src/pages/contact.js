@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Col, Form, Spinner } from "react-bootstrap"
+import { Button, Col, Form, Row, Spinner } from "react-bootstrap"
 import { Formik } from "formik"
 import { object, string } from "yup"
 
@@ -56,7 +56,7 @@ export default function ContactPage({ location }) {
         {({ errors, handleChange, handleSubmit, isSubmitting, touched, values }) =>
           <Form style={{maxWidth: '516px'}} name={formName} data-netlify="true" noValidate onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value={formName} />
-            <Form.Row className="mb-2">
+            <Row className="mb-2">
               <Form.Group as={Col} controlId="formName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -68,8 +68,8 @@ export default function ContactPage({ location }) {
                 />
                 <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
               </Form.Group>
-            </Form.Row>
-            <Form.Row className="mb-2">
+            </Row>
+            <Row className="mb-2">
               <Form.Group as={Col} controlId="formEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -81,8 +81,8 @@ export default function ContactPage({ location }) {
                 />
                 <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
               </Form.Group>
-            </Form.Row>
-            <Form.Row className="mb-3">
+            </Row>
+            <Row className="mb-3">
               <Form.Group as={Col} controlId="formMessage">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
@@ -94,7 +94,7 @@ export default function ContactPage({ location }) {
                 />
                 <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
               </Form.Group>
-            </Form.Row>
+            </Row>
             {isSubmitting ?
               <Button className="mb-2" variant="secondary" disabled>
                 <Spinner
