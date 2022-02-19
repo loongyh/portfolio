@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "bootstrap": "latest",
-    "formik": "latest",
     "gatsby": "latest",
     "gatsby-plugin-feed": "latest",
     "gatsby-plugin-image": "latest",
@@ -35,8 +34,7 @@
     "react-bootstrap-icons": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
-    "sass": "latest",
-    "yup": "latest"
+    "sass": "latest"
   },
   "devDependencies": {
     "prettier": "latest"
