@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 export default function ContactPage({ location }) {
-  const formName = 'contact'
-
   return (
     <Layout location={location}>
       <Seo title="Contact Me" keywords={[`get in touch`, `connect`, `reach`]} />
@@ -14,16 +12,19 @@ export default function ContactPage({ location }) {
       <Form
         style={{maxWidth: '516px'}}
         method="post"
-        name={formName}
+        name="contact"
         data-netlify="true"
+        data-netlify-recaptcha="true"
+        netlify-honeypot="form-name"
       >
-        <input type="hidden" name="form-name" value={formName} />
+        <input type="hidden" name="form-name" />
         <Row className="mb-2">
           <Form.Group controlId="formName">
             <Form.Label>Name</Form.Label>
             <Form.Control
               required
               type="text"
+              name="name"
               placeholder="Name"
             />
           </Form.Group>
@@ -34,6 +35,7 @@ export default function ContactPage({ location }) {
             <Form.Control
               required
               type="email"
+              name="email"
               placeholder="user@example.com"
             />
           </Form.Group>
@@ -45,10 +47,12 @@ export default function ContactPage({ location }) {
               required
               as="textarea"
               rows={3}
+              name="message"
             />
           </Form.Group>
         </Row>
-        <Button className="mb-2" variant="secondary" type="submit">Submit</Button>
+        <div data-netlify-recaptcha="true" />
+        <Button className="mt-2" variant="secondary" type="submit">Submit</Button>
       </Form>
     </Layout>
   )
