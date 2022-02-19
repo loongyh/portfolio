@@ -14,7 +14,6 @@ export default function ContactPage({ location }) {
         method="post"
         name="contact"
         data-netlify="true"
-        data-netlify-recaptcha="true"
         netlify-honeypot="form-name"
       >
         <input type="hidden" name="form-name" />
@@ -51,8 +50,7 @@ export default function ContactPage({ location }) {
             />
           </Form.Group>
         </Row>
-        <div data-netlify-recaptcha="true" />
-        <Button className="mt-2" variant="secondary" type="submit">Submit</Button>
+        <Button variant="secondary" type="submit">Submit</Button>
       </Form>
     </Layout>
   )
