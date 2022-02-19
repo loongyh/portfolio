@@ -21,7 +21,7 @@ Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.shape({
     childImageSharp: PropTypes.shape({
       gatsbyImageData: PropTypes.shape({
@@ -67,13 +67,13 @@ export default function Seo({ description, lang, meta, image, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const pageTitle = title || site.siteMetadata.title
 
   return (
     <Helmet
       htmlAttributes={{lang}}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={pageTitle}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -81,7 +81,7 @@ export default function Seo({ description, lang, meta, image, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           property: `og:description`,
