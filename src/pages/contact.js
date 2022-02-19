@@ -14,9 +14,9 @@ export default function ContactPage({ location }) {
         method="post"
         name="contact"
         data-netlify="true"
-        netlify-honeypot="form-name"
+        netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="form-name" />
+        <input type="hidden" name="bot-field" />
         <Row className="mb-2">
           <Form.Group controlId="formName">
             <Form.Label>Name</Form.Label>
