@@ -23,7 +23,7 @@ Applying for government and corporate schemes often requires a tedious amount of
 In a household of 6, here's an applicant will have to consolidate and submit upwards of 20 documents:
 
 | Member  | Employment Status | Age   | No. of Docs Required |
-|---------|-------------------|-------|----------------------|
+| ------- | ----------------- | ----- | -------------------- |
 | Father  | Employed          | 54    | 5                    |
 | Mother  | Unemployed        | 52    | 4                    |
 | Child 1 | Student           | 24    | 2                    |
@@ -33,3 +33,12 @@ In a household of 6, here's an applicant will have to consolidate and submit upw
 |         |                   | Total | 20                   |
 
 All documents submitted have to be manually checked against the criteria, and there's usually missing or invalid submissions that has to be resubmitted. This usually result in a convoluted chain of back-and-forth emails between the applicant and the public official which can quickly get messy.
+
+## Solution
+
+DocuLens is an integrated platform to streamline the application process:
+
+1. An applicant fills a dynamic form created using a FormsSG-like form builder. The user answers a series of questions and the appropriate file upload dropzones are automatically invoked depending on the response. This leaves out the guesswork and the applicant knows exactly which documents are required.
+2. Once the form and all its required documents are submitted, it appears in a dashboard for the officers to verify. Any improper submissions can then be flagged and the applicant notified to resubmit.
+![Form Submission](2.png "Form Submission")
+3. Once the
