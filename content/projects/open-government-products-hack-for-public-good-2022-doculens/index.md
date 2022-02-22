@@ -39,6 +39,13 @@ All documents submitted have to be manually checked against the criteria, and th
 DocuLens is an integrated platform to streamline the application process:
 
 1. An applicant fills a dynamic form created using a FormsSG-like form builder. The user answers a series of questions and the appropriate file upload dropzones are automatically invoked depending on the response. This leaves out the guesswork and the applicant knows exactly which documents are required.
-2. Once the form and all its required documents are submitted, it appears in a dashboard for the officers to verify. Any improper submissions can then be flagged and the applicant notified to resubmit.
+
 ![Form Submission](2.png "Form Submission")
-3. Once the
+
+2. Once the form and all its required documents are submitted, it appears in a dashboard for the officers to verify. Any improper submissions can then be flagged and the applicant notified to resubmit.
+
+![Dashboard](3.png "Dashboard")
+
+![Form Viewer](4.png "Form Viewer")
+
+3. Once the resubmissions are checked and proper, the application can be marked as complete and moved on.
