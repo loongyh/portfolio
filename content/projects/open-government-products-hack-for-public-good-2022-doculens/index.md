@@ -10,7 +10,7 @@ projectEnd: 2022-01-22T05:11:53.209Z
 
 [Open Government Products](https://www.open.gov.sg/aboutus) is an experimental tech developmental division of [GovTech](https://www.tech.gov.sg/) that's run like a fully-funded start-up company and largely free from the bureaucracies of the traditional government agencies. As such, they have wide latitude to experiment and build software utilising the latest cloud services and web frameworks.
 
-I had the opportunity to represent [PayPal](https://www.paypal.com/) in the [2022 Hack for Public Good](https://www.open.gov.sg/hackathon/2022) hackathon, where various teams took up the challenge to prototype workable solutions to current issues faced by government agencies and the public. After some looking around, I took interest in the DocuLens project and proceeded to join the team and eventually contributed frontend code for the [MVP presented in the finale](https://www.youtube.com/watch?v=GBjewa49nk8).
+I had the opportunity to represent [PayPal](https://www.paypal.com/) in the [2022 Hack for Public Good](https://www.open.gov.sg/hackathon/2022) hackathon, where various teams took up the challenge to prototype workable solutions to current issues faced by government agencies and the public. After some looking around, I took interest in the [DocuLens](https://github.com/datagovsg/doculens-sg) project and proceeded to join the team and eventually contributed frontend code for the [MVP presented in the finale](https://www.youtube.com/watch?v=GBjewa49nk8).
 
 ## Problem
 
@@ -38,7 +38,7 @@ All documents submitted have to be manually checked against the criteria, and th
 
 DocuLens is an integrated platform to streamline the application process:
 
-1. An applicant fills a dynamic form created using a FormsSG-like form builder. The user answers a series of questions and the appropriate file upload dropzones are automatically invoked depending on the response. This leaves out the guesswork and the applicant knows exactly which documents are required.
+1. An applicant fills a dynamic form created by administrators using a FormsSG-like form builder. The user answers a series of questions and the appropriate file upload dropzones are automatically invoked depending on the response. This leaves out the guesswork and the applicant knows exactly which documents are required.
 
 ![Form Submission](2.png "Form Submission")
 
@@ -49,3 +49,5 @@ DocuLens is an integrated platform to streamline the application process:
 ![Form Viewer](4.png "Form Viewer")
 
 3. Once the resubmissions are checked and proper, the application can be marked as complete and moved on.
+
+## Conclusion
