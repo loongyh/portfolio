@@ -10,7 +10,7 @@ projectEnd: 2022-01-22T05:11:53.209Z
 
 [Open Government Products](https://www.open.gov.sg/aboutus) is an experimental tech developmental division of [GovTech](https://www.tech.gov.sg/) that's run like a fully-funded start-up company and largely free from the bureaucracies of the traditional government agencies. As such, they have wide latitude to experiment and build software utilising the latest cloud services and web frameworks.
 
-I had the opportunity to represent [PayPal](https://www.paypal.com/) in the [2022 Hack for Public Good](https://www.open.gov.sg/hackathon/2022) hackathon, where various teams took up the challenge to prototype workable solutions to current issues faced by government agencies and the public. After some looking around, I took interest in the [DocuLens](https://github.com/datagovsg/doculens-sg) project and proceeded to join the team and eventually contributed frontend code for the [MVP presented in the finale](https://www.youtube.com/watch?v=GBjewa49nk8).
+I had the opportunity to represent [PayPal](https://www.paypal.com/) in the [2022 Hack for Public Good](https://www.open.gov.sg/hackathon/2022) hackathon, where various teams took up the challenge to prototype workable solutions to current issues faced by government agencies and the public. After some looking around, I took interest in the [DocuLens](https://www.open.gov.sg/hackathon/2022/doculens) project and proceeded to join the team and eventually contributed frontend code for the [MVP presented in the finale](https://www.youtube.com/watch?v=GBjewa49nk8).
 
 ## Problem
 
@@ -51,3 +51,5 @@ DocuLens is an integrated platform to streamline the application process:
 3. Once the resubmissions are checked and proper, the application can be marked as complete and moved on.
 
 ## Conclusion
+
+I have learnt a lot in this collaboration with OGP and have come to appreciate their innovation-first, solution-focussed and open culture unseen in the public sector. I look forward to seeing this project being integrated into FormsSG and am confident it'll massively improve the application handling workflow and lessen the pain of the bureaucratic process.
