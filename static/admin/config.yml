@@ -10,6 +10,7 @@ collections:
   - name: "about"
     label: "About"
     media_folder: ""
+    public_folder: ""
     editor:
       preview: false
     files:
@@ -41,7 +42,6 @@ collections:
     folder: "content/projects"
     create: true
     slug: "index"
-    media_folder: ""
     path: "{{title}}/index"
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -58,7 +58,6 @@ collections:
       preview: false
     create: true
     slug: "index"
-    media_folder: ""
     path: "{{title}}/index"
     fields:
       - label: "Type"
@@ -77,7 +76,6 @@ collections:
       preview: false
     create: true
     slug: "index"
-    media_folder: ""
     path: "{{organisation}}/index"
     fields:
       - { label: "Organisation", name: "organisation", widget: "string" }
