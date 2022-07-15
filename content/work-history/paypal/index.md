@@ -8,6 +8,8 @@ jobs:
     Government Products 2022 Hackathon
   - Contributed to localization efforts in EU SEPA bank statement soft
     descriptors
+  - Contributed to efforts to enable automated bank batch withdrawals in
+    settlements domain
 workStart: 2021-08-05T22:11:01.898Z
 workEnd: ""
 url: https://www.paypal.com
