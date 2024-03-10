@@ -3,9 +3,7 @@ title: ESPHome - UART Multidrop/Multipoint Support
 description: Extend existing ESPHome UART component to interface multiple
   devices on one UART bus.
 thumbnail: uart.png
-start: 2021-04-07T02:35:11.648Z
-end: ""
-projectStart: 2021-06-14T21:03:36.058Z
+projectStart: 2021-04-07T02:35:11.648Z
 projectEnd: 2021-06-14T21:03:36.078Z
 ---
 ## Intro
