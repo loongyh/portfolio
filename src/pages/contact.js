@@ -7,7 +7,6 @@ import Seo from "../components/seo"
 export default function ContactPage({ location }) {
   return (
     <Layout location={location}>
-      <Seo title="Contact Me" keywords={[`get in touch`, `connect`, `reach`]} />
       <h2 className="mb-3">Contact Me</h2>
       <Form
         style={{maxWidth: '516px'}}
@@ -55,3 +54,5 @@ export default function ContactPage({ location }) {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Contact Me" keywords={[`get in touch`, `connect`, `reach`]} />

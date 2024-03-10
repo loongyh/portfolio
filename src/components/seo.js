@@ -7,20 +7,15 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage, getSrc } from "gatsby-plugin-image"
 
 Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
   description: ``,
 }
 
 Seo.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   image: PropTypes.shape({
     childImageSharp: PropTypes.shape({
@@ -32,7 +27,7 @@ Seo.propTypes = {
   }),
 }
 
-export default function Seo({ description, lang, meta, image, title }) {
+export default function Seo({ description, image, title }) {
   const { file, site } = useStaticQuery(
     graphql`
       query {
@@ -67,21 +62,18 @@ export default function Seo({ description, lang, meta, image, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const pageTitle = title || site.siteMetadata.title
 
   return (
-    <Helmet
-      htmlAttributes={{lang}}
-      title={pageTitle}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
+    <>
+      <title>{(title ? `${title} | ` : "").concat(site.siteMetadata.title)}</title>
+      {[
         {
           name: `description`,
           content: metaDescription,
         },
         {
           property: `og:title`,
-          content: pageTitle,
+          content: title || site.siteMetadata.title,
         },
         {
           property: `og:description`,
@@ -107,7 +99,7 @@ export default function Seo({ description, lang, meta, image, title }) {
           name: `og:url`,
           content: site.siteMetadata.siteUrl,
         },
-      ].concat(meta)}
-    />
+      ].map((meta, index) => <meta key={index} {...meta} />)}
+    </>
   )
 }

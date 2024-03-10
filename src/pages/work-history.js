@@ -39,7 +39,6 @@ export default function WorkHistoryPage({ location }) {
 
   return (
     <Layout location={location}>
-      <Seo title="Work History" keywords={[`industry`, `experience`, `jobs`]} />
       {workHistory.nodes.map(node =>
         <div key={node.id} className="mb-5">
           <Container>
@@ -72,3 +71,5 @@ export default function WorkHistoryPage({ location }) {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Work History" keywords={[`industry`, `experience`, `jobs`]} />

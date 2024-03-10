@@ -54,7 +54,6 @@ export default function IndexPage({ location }) {
     <>
       <Container className="banner" style={{backgroundImage: `url(${getSrc(about.childMarkdownRemark.frontmatter.banner)})`}} />
       <Layout location={location}>
-        <Seo keywords={[`portfolio`, `projects`, `works`]} />
         <h1 className="text-center">Hi, I'm {about.childMarkdownRemark.frontmatter.name}</h1>
         <h2 className="text-center" style={{fontSize:'1.5rem'}}>{about.childMarkdownRemark.frontmatter.occupation}</h2>
         <h2 className="text-center" style={{fontSize:'0.8rem'}}>{about.childMarkdownRemark.frontmatter.education1}</h2>
@@ -78,3 +77,5 @@ export default function IndexPage({ location }) {
     </>
   )
 }
+
+export const Head = () => <Seo keywords={[`portfolio`, `projects`, `works`]} />

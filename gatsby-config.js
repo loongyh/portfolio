@@ -163,7 +163,6 @@ module.exports = {
         icon: `content/about/${settings.avatar}`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
     {

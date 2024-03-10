@@ -60,7 +60,6 @@ export default function SkillsPage({ location }) {
 
   return (
     <Layout location={location}>
-      <Seo title="My Skills" keywords={[`expertise`, `proficiency`, `know-how`]} />
       <h2 className="mb-4">Industry Knowledge</h2>
       <Container>
         <Row className="gy-4" xs={1} md={2} lg={3}>
@@ -77,3 +76,5 @@ export default function SkillsPage({ location }) {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="My Skills" keywords={[`expertise`, `proficiency`, `know-how`]} />

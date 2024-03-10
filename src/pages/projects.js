@@ -41,7 +41,6 @@ export default function ProjectsPage({ location }) {
 
   return (
     <Layout location={location}>
-      <Seo title="My Projects" keywords={[`portfolio`, `work done`, `undertaking`]} />
       <Container>
           <Row className="gy-4" xs={1} sm={2} md={3} lg={4} xl={6}>
             {projects.nodes.map(project => (
@@ -65,3 +64,5 @@ export default function ProjectsPage({ location }) {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="My Projects" keywords={[`portfolio`, `work done`, `undertaking`]} />

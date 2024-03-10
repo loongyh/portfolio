@@ -1,15 +1,20 @@
 ---
 organisation: PayPal
-position: Software Engineer
+position: Software Engineer (Merchant Settlement Individual Contributor)
 thumbnail: paypal.png
 jobs:
+  - EU SEPA bank statement soft descriptors localization
+  - Implement purpose code for UAE merchants to enable automated bank withdrawal
+    settlements
+  - Migration of merchant settlement-specific balance aggregation based on DB
+    queries to use cross-domain API instead (eliminate
+    redundancies/inconsistencies), also written various node.js scripts to aid
+    in arduous account migration process
+  - Implement split withdrawals and purpose code for South America/Middle East
+    regions to enable automated bank withdrawal settlements
   - Wrote Node.js scripts to process and clean up platform configurations
   - Represented PayPal and contributed frontend React.js code for Open
     Government Products 2022 Hackathon
-  - Contributed to localization efforts in EU SEPA bank statement soft
-    descriptors
-  - Contributed to efforts to enable automated bank batch withdrawals in
-    settlements domain
 workStart: 2021-08-05T22:11:01.898Z
 workEnd: ""
 url: https://www.paypal.com
