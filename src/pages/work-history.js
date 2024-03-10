@@ -12,7 +12,7 @@ export default function WorkHistoryPage({ location }) {
       query {
         allMarkdownRemark(
           filter: {frontmatter: {organisation: {ne: null}}}
-          sort: { fields: frontmatter___workStart, order: DESC }
+          sort: {frontmatter: {workStart: DESC}}
         ) {
           nodes {
             frontmatter {

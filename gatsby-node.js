@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMarkdownRemark(
           filter: {frontmatter: {projectStart: {ne: null}}}
-          sort: { fields: frontmatter___projectStart, order: DESC }
+          sort: {frontmatter: {projectStart: DESC}}
         ) {
           nodes {
             id

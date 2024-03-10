@@ -12,7 +12,7 @@ export default function SkillsPage({ location }) {
       query {
         allMarkdownRemark(
           filter: {frontmatter: {type: {ne: null}}}
-          sort: { fields: frontmatter___title }
+          sort: {frontmatter: {title: ASC}}
         ) {
           nodes {
             frontmatter {

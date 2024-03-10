@@ -128,7 +128,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   filter: {frontmatter: {projectStart: {ne: null}}}
-                  sort: { fields: frontmatter___projectStart, order: DESC }
+                  sort: {frontmatter: {projectStart: DESC}}
                 ) {
                   nodes {
                     excerpt
@@ -164,7 +164,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-decap-cms`,
     {
       resolve: "gatsby-plugin-root-import",
       options: {

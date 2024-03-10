@@ -12,7 +12,7 @@ export default function IndexPage({ location }) {
       query {
         images: allFile(
           filter: {sourceInstanceName: {eq: "images"}}
-          sort: {fields: name}
+          sort: {name: ASC}
         ) {
           nodes {
             name

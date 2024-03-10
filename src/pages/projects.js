@@ -12,7 +12,7 @@ export default function ProjectsPage({ location }) {
       query {
         allMarkdownRemark(
           filter: {frontmatter: {projectStart: {ne: null}}}
-          sort: { fields: frontmatter___projectStart, order: DESC }
+          sort: {frontmatter: {projectStart: DESC}}
         ) {
           nodes {
             frontmatter {
