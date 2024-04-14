@@ -15,7 +15,7 @@ jobs:
   - Wrote Node.js scripts to process and clean up platform configurations
   - Represented PayPal and contributed frontend React.js code for Open
     Government Products 2022 Hackathon
-workStart: 2021-08-05T22:11:01.898Z
-workEnd: ""
+workStart: 2021-08-16T00:00:00.000Z
+workEnd: 2024-04-01T00:00:00.000Z
 url: https://www.paypal.com
 ---
