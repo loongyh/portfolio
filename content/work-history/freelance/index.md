@@ -2,13 +2,13 @@
 organisation: Freelance
 position: Smart Home Systems Engineer/Integrator
 jobs:
-  - Procurement, integration and testing (R&D) of hardware from Taobao (China)
-    for home automation purposes
-  - Planning and installation of automatic smart windows, doors, curtain,
-    blinds, lights, etc. at HDB units
-  - ESPHome - Wrote 2 hardware integrations using native APIs for the opensource
-    ESPHome project
-workStart: 2018-08-12T21:58:15.408Z
-workEnd: 2021-04-15T16:00:00.000Z
+  - Planning, procurement and installation of home automation hardware at
+    residential units
+  - Wrote 2 hardware integrations using native APIs for the ESPHome opensource
+    (OSS) project
+  - Wrote NEA climate sensors and weather forecast integration for the Home
+    Assistant OSS project
+workStart: 2018-08-01T00:00:00.000Z
+workEnd: 2021-04-01T00:00:00.000Z
 url: /projects/
 ---
