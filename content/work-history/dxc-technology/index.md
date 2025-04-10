@@ -12,7 +12,7 @@ jobs:
   - Added new columns to existing table to support new functionalities
   - Maintenance (bug fixing and troubleshooting) on existing backend and
     frontend codebase
-workStart: 2024-09-23T16:00:00.000Z
-workEnd: 2025-03-30T16:00:00.000Z
+workStart: 2024-09-24T00:00:00.000Z
+workEnd: 2025-03-31T00:00:00.000Z
 url: https://dxc.com
 ---
